@@ -1,5 +1,5 @@
 # vnet
-A virtual network layer for pion.
+A virtual network layer for yiyilive.
 
 ## Overview
 
@@ -51,7 +51,7 @@ Net provides 3 interfaces:
 * Network API via Net (equivalent to net.Xxx())
 * Router access via NIC interface
 ```
-                   (Pion module/app, ICE servers, etc.)
+                   (yiyilive module/app, ICE servers, etc.)
                              +-----------+
                              |   :App    |
                              +-----------+
@@ -76,8 +76,8 @@ Net provides 3 interfaces:
 ## Implementation
 
 ### Design Policy
-* Each pion package should have config object which has `Net` (of type vnet.Net) property. (just like how
-        we distribute `LoggerFactory` throughout the pion project.
+* Each yiyilive package should have config object which has `Net` (of type vnet.Net) property. (just like how
+        we distribute `LoggerFactory` throughout the yiyilive project.
 * DNS => a simple dictionary (global)?
 * Each Net has routing capability (a goroutine)
 * Use interface provided net package as much as possible
@@ -87,7 +87,7 @@ Net provides 3 interfaces:
 * Root router has no NAT (== Internet / WAN)
 * Non-root router has a NAT always
 * When a Net is instantiated, it will automatically add `lo0` and `eth0` interface, and `lo0` will
-have one IP address, 127.0.0.1. (this is not used in pion/ice, however)
+have one IP address, 127.0.0.1. (this is not used in yiyilive/ice, however)
 * When a Net is added to a router, the router automatically assign an IP address for `eth0`
 interface.
    - For simplicity
@@ -105,8 +105,8 @@ interface.
 import (
 	"net"
 
-	"github.com/pion/transport/vnet"
-	"github.com/pion/logging"
+	"github.com/yiyilive/transport/vnet"
+	"github.com/yiyilive/logging"
 )
 
 // Create WAN (a root router).

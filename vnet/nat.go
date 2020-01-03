@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pion/logging"
+	"github.com/yiyilive/logging"
 )
 
 // EndpointDependencyType defines a type of behavioral dependendency on the

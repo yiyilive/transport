@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/pion/logging"
+	"github.com/yiyilive/logging"
 )
 
 type resolverConfig struct {

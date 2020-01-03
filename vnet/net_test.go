@@ -5,7 +5,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/pion/logging"
+	"github.com/yiyilive/logging"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -431,14 +431,14 @@ func TestNetVirtual(t *testing.T) {
 		assert.NoError(t, err, "should succeed")
 		assert.NotNil(t, wan, "should succeed")
 
-		err = wan.AddHost("test.pion.ly", "30.31.32.33")
+		err = wan.AddHost("test.yiyilive.ly", "30.31.32.33")
 		assert.NoError(t, err, "should succeed")
 
 		nw := NewNet(&NetConfig{})
 
 		assert.NoError(t, wan.AddNet(nw), "should succeed")
 
-		conn, err := nw.Dial("udp", "test.pion.ly:1234")
+		conn, err := nw.Dial("udp", "test.yiyilive.ly:1234")
 		assert.NoError(t, err, "should succeed")
 
 		laddr := conn.LocalAddr()
